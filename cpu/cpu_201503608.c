@@ -14,9 +14,10 @@ struct list_head *list; // estructura necesaria para recorrer cada lista de tare
 static int escribir_archivo(struct seq_file * archivo, void *v){
 	seq_printf(archivo,"{\n");
 	for_each_process( task ){
+		seq_printf(archivo,"{\n");
 		seq_printf(archivo,"\"pid\": %d, \n",task->pid);
 		seq_printf(archivo,"\"nombre\": \"%s\", \n",task->comm);
-		seq_printf(archivo,"\"usuario\": \"lrobles\", \n");
+		seq_printf(archivo,"\"usuario\": \"root\", \n");
 		seq_printf(archivo,"\"estado\": %ld, \n",task->state);
 		seq_printf(archivo,"\"hijo\":\n");
 		seq_printf(archivo,"\t[\n");
@@ -26,13 +27,14 @@ static int escribir_archivo(struct seq_file * archivo, void *v){
 			childtask= list_entry( list, struct task_struct, sibling );
 			seq_printf(archivo,"\"pid\": %d, \n",childtask->pid);
 			seq_printf(archivo,"\"nombre\": \"%s\", \n",childtask->comm);
-			seq_printf(archivo,"\"usuario\": \"lrobles\", \n");
+			seq_printf(archivo,"\"usuario\": \"root\", \n");
 			seq_printf(archivo,"\"estado\": %ld, \n",childtask->state);
-			seq_printf(archivo,"\t}\n");
+			seq_printf(archivo,"\t},\n");
 		}
+		seq_printf(archivo,"\t]\n");
+		seq_printf(archivo,"},\n");
 	}
-	seq_printf(archivo,"\t]\n");
-	seq_printf(archivo,"}");
+	seq_printf(archivo,"}\n");
 	return 0;
 }
 
