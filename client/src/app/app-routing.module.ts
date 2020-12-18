@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {CpuComponent} from './components/cpu/cpu.component'
 import {RamComponent}from './components/ram/ram.component'
 import {Ram2Component} from './ram2/ram2.component'
-
+import {ProcesosComponent} from './components/procesos/procesos.component'
 const routes: Routes = [
   {
     path: '',
@@ -18,7 +18,12 @@ const routes: Routes = [
   {
     path:'ram',
     component:RamComponent
+  },
+  {
+    path:'proceso',
+    component:ProcesosComponent
   }
+
 ];
 
 @NgModule({

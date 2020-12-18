@@ -9,6 +9,7 @@ import (
 	"time"
 	"fmt"
 	"log"
+	"io/ioutil"
 )
 type Ram struct {
 	Total string `json:"total"`
@@ -34,6 +35,7 @@ func main(){
 	router.HandleFunc("/",homeHandler)
 	router.HandleFunc("/cpu",CPUHandler).Methods("GET")
 	router.HandleFunc("/ram",RAMHandler).Methods("GET")
+	router.HandleFunc("/procesos",CPUprocesos).Methods("GET")
 	//inicia el servidor
 	log.Fatal(http.ListenAndServe(":3000",router))
 	
@@ -43,7 +45,15 @@ func homeHandler(w http.ResponseWriter, r *http.Request){
 	
 	w.Write([]byte("****Juan Luis Robles Molina****\n****201503608*****\n*****curso sistemas operativos 1*****"))
 }
-
+func CPUprocesos(w http.ResponseWriter, r *http.Request){
+	enableCors(&w)
+	b, err := ioutil.ReadFile("/proc/cpu_201503608")
+	if err != nil {
+		fmt.Print(err)
+	}
+	str:=string(b)
+	json.NewEncoder(w).Encode(str)
+}
 func CPUHandler(w http.ResponseWriter, r *http.Request){
 	enableCors(&w)
 	percent, _ := cpu.Percent(time.Second,true)
