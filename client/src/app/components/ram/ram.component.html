@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-4 offset-md-2">
+    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+    <div class="cardheader">
+      <h5>
+        Datos RAM
+      </h5>
+    </div>
+    <div class="cardbody">
+        Total del disco:{{total}} MB
+    </div> 
+  </div>
+</div>
+<div class="col-md-4 offset-md-2">
+  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  <div class="cardheader">
+    <h5>
+      Datos RAM
+    </h5>
+  </div>
+  <div class="cardbody">
+      Total libre:{{libre}}%<br>
+      Total libre:{{libremb}}MB
+  </div> 
+</div>
+</div>
+<div class="col-md-4 offset-md-2">
+  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  <div class="cardheader">
+    <h5>
+      Datos RAM
+    </h5>
+  </div>
+  <div class="cardbody">
+      Total de en uso:{{usado}}%<br>
+      Total en uso:{{usadomb}}MB
+  </div> 
+</div>
+</div>
+  <div class="col-md-6 offset-md-2">
+      <div class="cardheader">
+        <h5>
+          Datos RAM
+        </h5>
+      </div>
+      <div class="cardbody"> 
+                  <canvas baseChart width="15" height="10"
+                              [datasets]="lineChartData"
+                              [labels]="lineChartLabels"
+                              [options]="lineChartOptions"
+                              [colors]="lineChartColors"
+                              [legend]="lineChartLegend"
+                              [chartType]="lineChartType"
+                              [plugins]="lineChartPlugins"></canvas>
+    </div>
+</div>

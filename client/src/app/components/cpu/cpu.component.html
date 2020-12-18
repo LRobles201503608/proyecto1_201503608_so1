@@ -1,0 +1,120 @@
+<div class="row">
+  <div class="col-md-4 offset-md-2">
+    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+    <div class="cardheader">
+      <h5>
+        Datos NUCLEO 1
+      </h5>
+    </div>
+    <div class="cardbody">
+      UTILIZACION DEL NUCLEO: {{dnucleo1}}<br>
+    </div> 
+  </div>
+</div>
+<div class="col-md-4 offset-md-2">
+  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  <div class="cardheader">
+    <h5>
+      Datos NUCLEO 2
+    </h5>
+  </div>
+  <div class="cardbody">
+    UTILIZACION DEL NUCLEO: {{dnucleo2}}<br>
+      
+  </div> 
+</div>
+</div>
+<div class="col-md-4 offset-md-2">
+  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  <div class="cardheader">
+    <h5>
+      Datos NUCLEO 3
+    </h5>
+  </div>
+  <div class="cardbody">
+    UTILIZACION DEL NUCLEO: {{dnucleo3}}<br>
+      
+  </div> 
+</div>
+</div>
+<div class="col-md-4 offset-md-2">
+  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  <div class="cardheader">
+    <h5>
+      Datos NUCLEO 4
+    </h5>
+  </div>
+  <div class="cardbody">
+      UTILIZACION DEL NUCLEO: {{dnucleo4}}<br>
+      
+  </div> 
+</div>
+</div>
+  <div class="col-md-6 offset-md-2">
+      <div class="cardheader">
+        <h5>
+          Datos NUCLEO 1
+        </h5>
+      </div>
+      <div class="cardbody"> 
+                  <canvas baseChart width="15" height="10"
+                              [datasets]="lineChartData"
+                              [labels]="lineChartLabels"
+                              [options]="lineChartOptions"
+                              [colors]="lineChartColors"
+                              [legend]="lineChartLegend"
+                              [chartType]="lineChartType"
+                              [plugins]="lineChartPlugins"></canvas>
+    </div>
+</div>
+<div class="col-md-6 offset-md-2">
+  <div class="cardheader">
+    <h5>
+      Datos NUCLEO 2
+    </h5>
+  </div>
+  <div class="cardbody"> 
+              <canvas baseChart width="15" height="10"
+                          [datasets]="lineChartData2"
+                          [labels]="lineChartLabels2"
+                          [options]="lineChartOptions2"
+                          [colors]="lineChartColors"
+                          [legend]="lineChartLegend"
+                          [chartType]="lineChartType"
+                          [plugins]="lineChartPlugins"></canvas>
+</div>
+</div>
+<div class="col-md-6 offset-md-2">
+  <div class="cardheader">
+    <h5>
+      Datos NUCLEO 3
+    </h5>
+  </div>
+  <div class="cardbody"> 
+              <canvas baseChart width="15" height="10"
+                          [datasets]="lineChartData3"
+                          [labels]="lineChartLabels3"
+                          [options]="lineChartOptions3"
+                          [colors]="lineChartColors"
+                          [legend]="lineChartLegend"
+                          [chartType]="lineChartType"
+                          [plugins]="lineChartPlugins"></canvas>
+</div>
+</div>
+<div class="col-md-6 offset-md-2">
+  <div class="cardheader">
+    <h5>
+      Datos NUCLEO 4
+    </h5>
+  </div>
+  <div class="cardbody"> 
+              <canvas baseChart width="15" height="10"
+                          [datasets]="lineChartData4"
+                          [labels]="lineChartLabels4"
+                          [options]="lineChartOptions4"
+                          [colors]="lineChartColors"
+                          [legend]="lineChartLegend"
+                          [chartType]="lineChartType"
+                          [plugins]="lineChartPlugins"></canvas>
+</div>
+</div>
